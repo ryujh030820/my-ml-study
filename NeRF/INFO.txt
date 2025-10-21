@@ -1,0 +1,60 @@
+===== NeRF 구현 완료 =====
+
+✅ 작업 완료 사항:
+
+1. MPS/Metal 가속 지원
+   - Apple Silicon (M1/M2/M3)에서 GPU 가속 학습
+   - device 불일치 에러 수정 완료
+
+2. 실제 NeRF Synthetic Dataset 지원
+   - 8개 scene 모두 지원 (lego, chair, drums, ficus, hotdog, materials, mic, ship)
+   - 자동 데이터 로딩 및 전처리
+
+3. 구현 파일들:
+   - model.py: NeRF 모델 + 볼륨 렌더링
+   - data.py: 데이터 로더
+   - config.py: Scene별 설정
+   - train_real.py: 실제 데이터셋 학습 (추천!)
+   - test_real.py: 테스트 및 360도 렌더링
+   - train.py: 간단한 합성 데이터 학습
+   - quick_demo.py: 5분 빠른 데모
+
+4. 주요 기능:
+   - Positional encoding (고주파 디테일)
+   - View-dependent colors (반사 효과)
+   - Stratified sampling
+   - PSNR 자동 계산
+   - 360도 회전 비디오 생성
+
+===== 실행 방법 =====
+
+# 1. 빠른 데모 (5분)
+python quick_demo.py
+
+# 2. 실제 데이터셋으로 학습 (권장)
+python train_real.py lego
+
+# 3. 테스트 및 렌더링
+python test_real.py lego
+
+# 4. 자동 파이프라인
+./run_real.sh lego
+
+===== 데이터셋 위치 =====
+./nerf_synthetic/lego/     ✅ 있음
+./nerf_synthetic/chair/    ✅ 있음
+./nerf_synthetic/drums/    ✅ 있음
+./nerf_synthetic/ficus/    ✅ 있음
+./nerf_synthetic/hotdog/   ✅ 있음
+./nerf_synthetic/materials/✅ 있음
+./nerf_synthetic/mic/      ✅ 있음
+./nerf_synthetic/ship/     ✅ 있음
+
+===== 예상 학습 시간 =====
+30 에폭: 1-2시간 (M1/M2/M3)
+품질: PSNR 30-35 dB 예상
+
+===== 문서 =====
+README.md  - 전체 프로젝트 소개
+USAGE.md   - 자세한 사용 가이드
+

@@ -1,0 +1,13 @@
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+**/__pycache__/
+**/data/
+
+# NeRF dataset and model files
+NeRF/nerf_synthetic/
+NeRF/nerf_synthetic.zip
+NeRF/checkpoints/
+NeRF/renders/
+NeRF/*.zip
